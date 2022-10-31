@@ -1,0 +1,358 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/level_controller.gd" type="Script" id=1]
+[ext_resource path="res://assets/Screenshot 2022-10-04 13-10-17.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/bullets and hearts/bullet small.png" type="Texture" id=4]
+[ext_resource path="res://assets/bullets and hearts/health.png" type="Texture" id=5]
+[ext_resource path="res://assets/bullets and hearts/reloadbullet.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 240, 180 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("thewalk:playback_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "level 1"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 14.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 710, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6, 1.2, 1.8, 3, 5.2, 11, 13.3, 14.5, 14.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 0 ],
+"method": "_encounter"
+}, {
+"args": [ 1 ],
+"method": "_encounter"
+}, {
+"args": [ 2 ],
+"method": "_encounter"
+}, {
+"args": [ 3 ],
+"method": "_encounter"
+}, {
+"args": [ 4 ],
+"method": "_encounter"
+}, {
+"args": [ 5 ],
+"method": "_encounter"
+}, {
+"args": [ 7 ],
+"method": "_encounter"
+}, {
+"args": [ 8 ],
+"method": "_encounter"
+}, {
+"args": [ 6 ],
+"method": "_encounter"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("thewalk:playback_speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1.0, 3.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("death:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("death/Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("death:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Camera2D/RESTART:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "theEnd"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 4.63, 1, 1, 1 ), Color( 4.63, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("death:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("death/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("death:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera2D/RESTART:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "thered"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 4.63, 1, 1, 1 ), Color( 4.63, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="level_1" type="Node2D"]
+z_index = -1
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "480 360
+"
+}
+
+[node name="background" type="Sprite" parent="."]
+modulate = Color( 1, 0.0235294, 1, 1 )
+scale = Vector2( 0.621, 0.621 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="RESTART" type="TouchScreenButton" parent="Camera2D"]
+visible = false
+modulate = Color( 1, 1, 1, 0.356863 )
+position = Vector2( 42, 64 )
+scale = Vector2( 6, 1.5 )
+normal = ExtResource( 3 )
+
+[node name="YSort" type="YSort" parent="Camera2D"]
+position = Vector2( -44.069, 0 )
+
+[node name="bullett_catcher" type="TouchScreenButton" parent="Camera2D"]
+modulate = Color( 1, 1, 1, 0 )
+shape = SubResource( 6 )
+
+[node name="hud" type="ColorRect" parent="Camera2D"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 359.0
+margin_right = 480.0
+margin_bottom = 400.0
+
+[node name="reload" type="TouchScreenButton" parent="Camera2D/hud"]
+position = Vector2( 259, -360 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 6 )
+
+[node name="health" type="TextureRect" parent="Camera2D"]
+modulate = Color( 6.94, 1, 1, 0.47 )
+margin_right = 50.0
+margin_bottom = 48.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 2
+
+[node name="bullets" type="TextureRect" parent="Camera2D"]
+modulate = Color( 6.94, 1, 1, 0.47 )
+margin_left = 38.0
+margin_top = 359.0
+margin_right = 76.0
+margin_bottom = 390.0
+rect_rotation = 180.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 2
+flip_h = true
+flip_v = true
+
+[node name="thewalk" type="AnimationPlayer" parent="."]
+autoplay = "level 1"
+"anims/New Anim" = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+"anims/level 1" = SubResource( 3 )
+
+[node name="thered" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/theEnd = SubResource( 7 )
+anims/thered = SubResource( 5 )
+
+[node name="death" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 1250.0
+margin_bottom = 480.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="RichTextLabel" parent="death"]
+visible = false
+margin_left = 40.0
+margin_top = 67.0
+margin_right = 176.0
+margin_bottom = 99.0
+rect_scale = Vector2( 3, 3 )
+bbcode_text = "YOU ARE IN PIECES
+CLICK TO TRY AGAIN"
+text = "YOU ARE IN PIECES
+CLICK TO TRY AGAIN"
+
+[connection signal="pressed" from="Camera2D/RESTART" to="." method="_on_RESTART_pressed"]
+[connection signal="pressed" from="Camera2D/bullett_catcher" to="." method="_on_bullett_catcher_pressed"]
+[connection signal="pressed" from="Camera2D/hud/reload" to="." method="_on_reload_pressed"]
