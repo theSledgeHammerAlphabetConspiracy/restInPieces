@@ -668,7 +668,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
+"times": PoolRealArray( 0, 0.1, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 28, 27, 26 ]
@@ -692,10 +692,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( -38, -48 ), Vector2( -47, -41 ), Vector2( -80, -84 ), Vector2( -44, -44 ) ]
+"values": [ Vector2( -38, -48 ), Vector2( -47, -41 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath(".:position")
