@@ -3,7 +3,6 @@ extends Node2D
 var jackbat := preload('res://objects/jackbat.tscn')
 
 var reaper := preload('res://objects/reaper.tscn')
-var junk := preload('res://objects/junky.tscn')
 var slasher := preload('res://objects/slasher.tscn')
 var danger := preload('res://objects/danger.tscn')
 var tutorial := preload('res://objects/tutorialslasher.tscn')
