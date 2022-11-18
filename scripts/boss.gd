@@ -52,10 +52,10 @@ func _on_headshot_pressed():
 			$Sprite/AnimationPlayer.play("die")
 
 
-func _hit():#do i need this?
+func _hit():
 	Soundplayer.play_sound(Soundplayer.SLASHERHIT)
 	emit_signal("hits")
-	#print(str(target)+ " got hit")
+
 
 func _die():
 	emit_signal("dies")
@@ -148,7 +148,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_AnimationPlayer_animation_started(anim_name):
-	#print($Sprite/AnimationPlayer.get_current_animation())
 	if anim_name == "move":
 		randomize()
 		var newx = rand_range(50,420)
@@ -156,7 +155,7 @@ func _on_AnimationPlayer_animation_started(anim_name):
 		#create a spot to jump to the Y has to be consistant
 		
 func _play_sound(sound):
-	#fuckin DUMB way
+	#not the best way but it works
 	if sound == 0:
 		Soundplayer.play_sound(Soundplayer.BOSSHOWL)
 	elif sound == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/level_controller.gd" type="Script" id=1]
 [ext_resource path="res://assets/Screenshot 2022-10-04 13-10-17.png" type="Texture" id=2]
@@ -9,9 +9,6 @@
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 240, 180 )
-
-[sub_resource type="Animation" id=1]
-resource_name = "New Anim"
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -325,7 +322,6 @@ flip_v = true
 
 [node name="thewalk" type="AnimationPlayer" parent="."]
 autoplay = "level 1"
-"anims/New Anim" = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 "anims/level 1" = SubResource( 3 )
 

@@ -22,7 +22,7 @@ func _on_headshot_pressed():
 func _hit():
 	Soundplayer.play_sound(Soundplayer.REAPER)
 	emit_signal("hits")
-	#print(str(target)+ " got hit")
+
 
 func _die():
 	emit_signal("dies")

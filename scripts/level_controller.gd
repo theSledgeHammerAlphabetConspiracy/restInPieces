@@ -39,11 +39,11 @@ var encounter_dictionary: Array = [
 #5
 [[Vector2(200,100),reaper,"spawndelay2"],[Vector2(300,200),reaper,"spawn"],[Vector2(350,100),reaper,"spawndelay2"],
 [Vector2(225,325),slasher,"spawn"],[Vector2(300,325),slasher,"spawndelay5"],[Vector2(475,325),slasher,"spawndelay7"]],
-#6
+#6 placeholder for next level event
 [[Vector2(270,125),danger,null]],
-#7 boss
+#7 miniboss
 [[Vector2(500,125),jackbat,null]],
-#8
+#8 green man boss
 [[Vector2(250,145),boss,null]]
 
 ]
@@ -108,10 +108,9 @@ func _on_bullett_catcher_pressed():
 	else:
 		Soundplayer.play_sound(Soundplayer.EMPTY)
 	
-#change
 func _on_reload_pressed():
 	Soundplayer.play_sound(Soundplayer.RELOAD)
-	#might add an animation or a press and hold function... this button is def moving after the reload
+	#might add an animation or a press and hold function...
 	Manager.available_bullets = 7#cause the screen catches the first one
 	_bullets_change(Manager.available_bullets)
 	randomize()
