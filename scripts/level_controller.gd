@@ -1,7 +1,7 @@
 extends Node2D
 
+#enemy preloads
 var jackbat := preload('res://objects/jackbat.tscn')
-
 var reaper := preload('res://objects/reaper.tscn')
 var slasher := preload('res://objects/slasher.tscn')
 var danger := preload('res://objects/danger.tscn')
@@ -11,18 +11,17 @@ var boss := preload('res://objects/boss.tscn')
 var current_enemies: int = 0
 var wait_time: float = 0.0
 
-
-#health
 var health_size: int = 50#48
 var bullet_size: int = 30
 
-#var encounter_dictionary: Dictionary = {0:{Vector2(200,100):"reaper",Vector2(200,500):"reaper"},1:{Vector2(300,200):"reaper"}}
-#var encounter_dictionary: Array = [{Vector2(200,100):"reaper",Vector2(200,500):"reaper"},{Vector2(300,200):"reaper"}]
 
 #below is very messy the first [ is the dic, 
 #the next is the encounter number or spawn, 
 #the third is the individual spawns in side the individual encounter
 
+#this is the actual spawn the first vector2 is the position of the spawn, the second is the object spawned,
+#last is the animation that the sapwn will play first... the delay animations were created for a quick way to 
+#stagger incoming enmies
 #[Vector2(200,325),slasher,"spawnjump"]
 
 var encounter_dictionary: Array = [

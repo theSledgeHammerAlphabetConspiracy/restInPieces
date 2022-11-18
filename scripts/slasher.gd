@@ -1,7 +1,7 @@
 extends Node2D
 export var target: int = 0 # for attacking the actual player or for attacking an innocent
 
-
+#both of these are connected when the enemy is spawned in the level_controller script under the _encounter function
 signal dies
 signal hits
 
