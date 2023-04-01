@@ -2,6 +2,7 @@ extends Node2D
 
 export var target: int = 0 # for attacking the actual player or for attacking an innocent
 
+#both of these are connected when the enemy is spawned in the level_controller script under the _encounter function
 signal dies
 signal hits
 
@@ -21,7 +22,7 @@ func _on_headshot_pressed():
 func _hit():
 	Soundplayer.play_sound(Soundplayer.REAPER)
 	emit_signal("hits")
-	#print(str(target)+ " got hit")
+
 
 func _die():
 	emit_signal("dies")

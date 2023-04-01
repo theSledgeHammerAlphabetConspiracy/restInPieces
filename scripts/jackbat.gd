@@ -7,9 +7,10 @@ var hp : int = 10
 var dir := Vector2(1,-1)
 export var speed: float = 0.0
 
+#both of these are connected when the enemy is spawned in the level_controller script under the _encounter function
 signal dies
 signal hits
-
+##note that they are not added to the spawns that this enemy creates
 
 func _ready():
 	randomize()
@@ -52,7 +53,7 @@ func _on_headshot_pressed():
 func _hit():#do i need this?
 	Soundplayer.play_sound(Soundplayer.REAPER)
 	emit_signal("hits")
-	#print(str(target)+ " got hit")
+
 
 func _die():
 	emit_signal("dies")
@@ -63,12 +64,7 @@ func _spawn():
 	var spawn = 1+randi()%3
 	for i in spawn:
 		var enemy = slasher.instance()
-		#enemy.connect("dies",self,"_one_less_enemy")
-		###########FUCKINSTUPID
 		enemy.connect("hits",get_parent().get_parent().get_parent(),"_play_the_red")# this is the damage
-		#if encounter_dictionary[encounter_num][i-1][2] != null:
 		enemy.get_node("Sprite/AnimationPlayer").set_autoplay("spawn")
-		#enemy.set_position($Camera2D.get_position()+encounter_dictionary[encounter_num][i-1][0])
 		enemy.set_position(Vector2(75+(i*150)+rand_range(25,100),325))
-		#enemy.add_to_group("current_enemies")
 		get_parent().add_child(enemy)

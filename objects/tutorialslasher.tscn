@@ -1073,8 +1073,8 @@ bbcode_enabled = true
 bbcode_text = "[center]
 [rainbow freq=0.2]
 SHOOT THEM IN THE HEAD"
-text = "
-
+text = "[center]
+[rainbow freq=0.2]
 SHOOT THEM IN THE HEAD"
 
 [connection signal="pressed" from="headshot" to="." method="_on_headshot_pressed"]
